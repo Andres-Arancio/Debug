@@ -25,12 +25,15 @@ namespace WordsPhrases
         /// Obtiene o establece el texto de la palabra. El texto no tiene espacios al comienzo ni al final -los espacios
         /// son removidos al asignar el texto-.
         /// </summary>
+        /// <review>
+        /// Lo anterior es falso, la funcion no remueve espacios al comienzo o al final del texto
+        /// </review>
         /// <value>El texto de la palabra</value>
         public string Text
         {
             get
             {
-                return this.text;
+                return this.text.Trim(' ');
             }
 
             set

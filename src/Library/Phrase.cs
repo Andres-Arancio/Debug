@@ -46,14 +46,20 @@ namespace WordsPhrases
         /// Concatena las palabras de la frase.
         /// </summary>
         /// <returns>Las palabras de la frase concatenadas separadas por espacios.</returns>
+        /// <value>Count hace de auxiliar para asegurarse que no sea la primera iteracion del foreach</value>
         public string GetPhrase()
         {
             StringBuilder phrase = new StringBuilder();
+            int count = 0;
 
             foreach (Word word in this.words)
             {
-                phrase.Append(" ");
+                if(count!=0)
+                {
+                    phrase.Append(" ");
+                }
                 phrase.Append(word.Text);
+                count++;
             }
 
             string result = phrase.ToString();
